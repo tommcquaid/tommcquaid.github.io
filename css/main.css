@@ -52,7 +52,7 @@ section {
     filter: grayscale(100%);
     -webkit-filter: unquote("grayscale(100%)"); 
     background-color: #b1b1b1;
-    background-image: url(http://placekitten.com/95/95);
+    background-image: url(../img/tom.jpg);
     background-position: 50%;
     background-size: contain;
     border-radius: 50px;
@@ -78,3 +78,17 @@ section {
 .location {
     margin-bottom: 12px;
 }
+
+/* Media Queries */
+
+@media (max-width: 560px) {
+    body {
+        margin: 50px 30px;
+    }
+
+    .years {
+        width: 60px;
+        margin-right: 10px;
+        flex: none;
+    }
+  }
