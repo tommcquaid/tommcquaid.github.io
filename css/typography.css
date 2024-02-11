@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "soehne";
+    src: url("../fonts/soehne-buch.woff2") format('woff');
+  }
+
+@font-face {
+    font-family: "soehne";
+    src: url("../fonts/soehne-buch-kursiv.woff2") format('woff');
+    font-style: italic;
+  }
+  
+@font-face {
+    font-family: "soehne";
+    src: url("../fonts/soehne-dreiviertelfett.woff2") format('woff');
+    font-weight: bold;
+  }
+  
+@font-face {
+    font-family: "soehne";
+    src: url("../fonts/soehne-dreiviertelfett-kursiv.woff2") format('woff');
+    font-weight: bold;
+    font-style: italic;
+  }
