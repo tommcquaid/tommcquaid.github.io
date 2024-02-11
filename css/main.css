@@ -37,6 +37,10 @@ section {
     margin-bottom: 45px;
 }
 
+.about {
+    margin-bottom: 70px;
+}
+
 .intro {
     grid-column-gap: 18px;
     display: flex;
@@ -57,10 +61,6 @@ section {
     background-size: contain;
     border-radius: 50px;
     flex: none;
-}
-
-.work, .education {
-    margin-top: 70px;
 }
 
 .year-block {
