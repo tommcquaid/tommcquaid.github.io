@@ -15,7 +15,8 @@ body {
     margin: 70px auto;
 }
 
-h1, h3 {
+h1,
+h3 {
     color: #333;
 }
 
@@ -53,10 +54,10 @@ section {
 .avatar {
     width: 95px;
     height: 95px;
-    filter: grayscale(100%);
-    -webkit-filter: unquote("grayscale(100%)"); 
+    /*filter: grayscale(100%);*/
+    /*-webkit-filter: unquote("grayscale(100%)");*/
     background-color: #b1b1b1;
-    background-image: url(../img/tom.jpg);
+    background-image: url(../img/tom.png);
     background-position: 50%;
     background-size: contain;
     border-radius: 50px;
@@ -91,4 +92,4 @@ section {
         margin-right: 10px;
         flex: none;
     }
-  }
+}
