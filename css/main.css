@@ -47,6 +47,7 @@ body {
     margin: var(--space-xl) auto;
 }
 
+
 /* Headings & Paragraphs */
 
 h1,
@@ -67,6 +68,7 @@ h4 {
 p {
     margin-bottom: var(--space-sm);
 }
+
 
 /* Sections & Layout */
 
@@ -107,6 +109,7 @@ section {
     margin-bottom: var(--space-sm);
 }
 
+
 /* Avatar */
 
 .avatar {
@@ -119,6 +122,7 @@ section {
     background-size: cover;
     flex: none;
 }
+
 
 /* Media Queries */
 
