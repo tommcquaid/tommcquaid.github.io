@@ -10,7 +10,6 @@
     /* Colors */
     --color-text: #6e6e6e;
     --color-heading: #333;
-    --color-subhead: #999;
     --color-bg: #fff;
 
     /* Spacing Scale */
@@ -59,10 +58,6 @@ h1 {
     font-size: 1.5rem;
     line-height: 1.35;
     letter-spacing: 0.6px;
-}
-
-h4 {
-    color: var(--color-subhead);
 }
 
 p {
