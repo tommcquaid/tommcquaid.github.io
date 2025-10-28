@@ -1,23 +1,43 @@
+/* Sohne Regular */
 @font-face {
-    font-family: "soehne";
-    src: url("../fonts/soehne-buch.woff2") format('woff');
-  }
+  font-family: "soehne";
+  src: url("../fonts/soehne-buch.woff2") format('woff');
+}
 
+/* Sohne Italic */
 @font-face {
-    font-family: "soehne";
-    src: url("../fonts/soehne-buch-kursiv.woff2") format('woff');
-    font-style: italic;
-  }
-  
+  font-family: "soehne";
+  src: url("../fonts/soehne-buch-kursiv.woff2") format('woff');
+  font-style: italic;
+}
+
+/* Sohne Bold */
 @font-face {
-    font-family: "soehne";
-    src: url("../fonts/soehne-dreiviertelfett.woff2") format('woff');
-    font-weight: bold;
-  }
-  
+  font-family: "soehne";
+  src: url("../fonts/soehne-dreiviertelfett.woff2") format('woff');
+  font-weight: bold;
+}
+
+/* Sohne Bold Italic */
 @font-face {
-    font-family: "soehne";
-    src: url("../fonts/soehne-dreiviertelfett-kursiv.woff2") format('woff');
-    font-weight: bold;
-    font-style: italic;
-  }
+  font-family: "soehne";
+  src: url("../fonts/soehne-dreiviertelfett-kursiv.woff2") format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Tiempos Text Regular */
+@font-face {
+  font-family: "tiempos-text";
+  src: url("../fonts/tiempos-text-regular.woff2") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Tiempos Text Italic */
+@font-face {
+  font-family: "tiempos-text";
+  src: url("../fonts/tiempos-text-italic.woff2") format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}

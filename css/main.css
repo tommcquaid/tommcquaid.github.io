@@ -3,6 +3,7 @@
 :root {
     /* Typography */
     --font-base: "soehne", sans-serif;
+    --font-serif: "tiempos-text", serif;
     --font-size-base: 14px;
     --line-height-base: 1.6;
     --letter-spacing-base: 0.45px;
@@ -51,6 +52,7 @@ body {
 
 h1,
 h3 {
+    font-family: var(--font-base);
     color: var(--color-heading);
 }
 
