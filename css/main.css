@@ -4,6 +4,7 @@
     /* Typography */
     --font-base: "soehne", sans-serif;
     --font-serif: "tiempos-text", serif;
+    --font-mono: "Geist Mono", monospace;
     --font-size-base: 14px;
     --line-height-base: 1.6;
     --letter-spacing-base: 0.45px;

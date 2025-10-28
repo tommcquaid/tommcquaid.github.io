@@ -1,43 +1,47 @@
-/* Sohne Regular */
+/* ------------------------------
+   Söhne
+------------------------------ */
 @font-face {
   font-family: "soehne";
-  src: url("../fonts/soehne-buch.woff2") format('woff');
+  src: url("../fonts/soehne-buch.woff2") format("woff2");
 }
 
-/* Sohne Italic */
 @font-face {
   font-family: "soehne";
-  src: url("../fonts/soehne-buch-kursiv.woff2") format('woff');
+  src: url("../fonts/soehne-buch-kursiv.woff2") format("woff2");
   font-style: italic;
 }
 
-/* Sohne Bold */
 @font-face {
   font-family: "soehne";
-  src: url("../fonts/soehne-dreiviertelfett.woff2") format('woff');
+  src: url("../fonts/soehne-dreiviertelfett.woff2") format("woff2");
   font-weight: bold;
 }
 
-/* Sohne Bold Italic */
 @font-face {
   font-family: "soehne";
-  src: url("../fonts/soehne-dreiviertelfett-kursiv.woff2") format('woff');
+  src: url("../fonts/soehne-dreiviertelfett-kursiv.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
 }
 
-/* Tiempos Text Regular */
+/* ------------------------------
+   Tiempos Text
+------------------------------ */
 @font-face {
   font-family: "tiempos-text";
-  src: url("../fonts/tiempos-text-regular.woff2") format('woff2');
+  src: url("../fonts/tiempos-text-regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
-/* Tiempos Text Italic */
 @font-face {
   font-family: "tiempos-text";
-  src: url("../fonts/tiempos-text-italic.woff2") format('woff2');
+  src: url("../fonts/tiempos-text-italic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
+
+/* Geist Mono is loaded via <link> in HTML */
