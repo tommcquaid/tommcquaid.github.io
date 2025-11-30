@@ -1,136 +1,132 @@
 /* Base Setup */
 
 :root {
-    /* Typography */
-    --font-base: "soehne", sans-serif;
-    --font-serif: "tiempos-text", serif;
-    --font-mono: "Geist Mono", monospace;
-    --font-size-base: 14px;
-    --line-height-base: 1.6;
-    --letter-spacing-base: 0.45px;
+  /* Typography */
+  --font-base: "soehne", sans-serif;
+  --font-serif: "tiempos-text", serif;
+  --font-mono: "Geist Mono", monospace;
+  --font-size-base: 14px;
+  --line-height-base: 1.6;
+  --letter-spacing-base: 0.45px;
 
-    /* Colors */
-    --color-text: #6e6e6e;
-    --color-heading: #333;
-    --color-bg: #fff;
+  /* Colors */
+  --color-text: #6e6e6e;
+  --color-heading: #333;
+  --color-bg: #fff;
 
-    /* Spacing Scale */
-    --space-xs: 8px;
-    --space-sm: 16px;
-    --space-md: 24px;
-    --space-lg: 40px;
-    --space-xl: 70px;
-    --space-xxl: 90px;
+  /* Spacing Scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 70px;
+  --space-xxl: 90px;
 
-    /* Layout */
-    --max-width: 508px;
+  /* Layout */
+  --max-width: 508px;
 }
 
 /* Global Styles */
 
 html {
-    font-size: var(--font-size-base);
+  font-size: var(--font-size-base);
 }
 
 body {
-    font-family: var(--font-base);
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: var(--line-height-base);
-    letter-spacing: var(--letter-spacing-base);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-    max-width: var(--max-width);
-    margin: var(--space-xl) auto;
+  max-width: var(--max-width);
+  margin: var(--space-xl) auto;
 }
-
 
 /* Headings & Paragraphs */
 
 h1,
 h3 {
-    font-family: var(--font-base);
-    color: var(--color-heading);
+  font-family: var(--font-base);
+  color: var(--color-heading);
 }
 
 h1 {
-    font-size: 1.5rem;
-    line-height: 1.35;
-    letter-spacing: 0.6px;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  letter-spacing: 0.6px;
 }
 
 p {
-    margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
-
 
 /* Sections & Layout */
 
 section {
-    margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-lg);
 }
 
 .about {
-    margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-xl);
 }
 
 .about h3 {
-    margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-xs);
 }
 
 .intro {
-    display: flex;
-    column-gap: 18px;
+  display: flex;
+  column-gap: 18px;
 }
 
 .bio {
-    margin-top: calc(var(--space-sm) + 3px);
+  margin-top: calc(var(--space-sm) + 3px);
 }
 
 .year-block {
-    display: flex;
-    margin-top: var(--space-md);
-    margin-bottom: var(--space-lg);
+  display: flex;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .years {
-    width: 90px;
-    margin-right: var(--space-md);
-    flex: none;
+  width: 90px;
+  margin-right: var(--space-md);
+  flex: none;
 }
 
 .location {
-    margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
-
 
 /* Avatar */
 
 .avatar {
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    background-color: #b1b1b1;
-    background-image: url("../img/tom.png");
-    background-position: center;
-    background-size: cover;
-    flex: none;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background-color: #b1b1b1;
+  background-image: url("../img/tom.png");
+  background-position: center;
+  background-size: cover;
+  flex: none;
 }
-
 
 /* Media Queries */
 
 @media (max-width: 560px) {
-    body {
-        margin: 10vw;
-    }
+  body {
+    margin: 10vw;
+  }
 
-    .years {
-        width: 60px;
-        margin-right: var(--space-xs);
-    }
+  .years {
+    width: 60px;
+    margin-right: var(--space-xs);
+  }
 }
