@@ -1,14 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('writing'))
+  .filter((entry) => !entry.data.draft && !entry.id.startsWith('_'))
+  .sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+const monthYear = (value: string) => {
+  const [year, month] = value.split('-').map(Number);
+  return new Date(year, month - 1).toLocaleDateString('en-US', {
+    month: 'short',
+    year: 'numeric',
+  });
+};
 ---
 
 <BaseLayout title="Writing — Tom McQuaid" current="writing">
-  <article class="page">
-    <div class="page__content prose">
-      <h1 class="page__title">Writing</h1>
-      <div class="page__body">
-        <p>Writing in progress.</p>
-      </div>
-    </div>
-  </article>
+  <h1 class="visually-hidden">Writing</h1>
+  <div class="column">
+    {
+      posts.length === 0 ? (
+        <p class="column__empty">Writing in progress.</p>
+      ) : (
+        <ul class="entry-list">
+          {posts.map((post) => {
+            const dateLabel = monthYear(post.data.date);
+            const inner = (
+              <>
+                <span class="entry-list__title">{post.data.title}</span>
+                <time datetime={`${post.data.date}-01`}>{dateLabel}</time>
+              </>
+            );
+
+            return (
+              <li>
+                {post.data.href ? (
+                  <a href={post.data.href}>{inner}</a>
+                ) : (
+                  <div class="entry-list__row">{inner}</div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )
+    }
+  </div>
 </BaseLayout>

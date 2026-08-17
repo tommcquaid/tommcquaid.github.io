@@ -14,9 +14,7 @@ const { image, caption, background } = Astro.props;
   <figure class="card__media">
     <Visual {...image} />
     {caption && (
-      <figcaption
-        style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--color-muted); text-align: center;"
-      >
+      <figcaption class="card__caption">
         {caption}
       </figcaption>
     )}

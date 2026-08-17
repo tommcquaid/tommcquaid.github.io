@@ -1,9 +1,27 @@
 body {
   font-family: var(--font-sans);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
   color: var(--color-text);
   background-color: var(--color-bg);
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+}
+
+.site-header__name,
+.home-tile__title,
+.page__title,
+.card__title,
+.card__statement,
+.card__quote,
+.card__metric-value,
+.entry-list__title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-title);
+  letter-spacing: var(--letter-spacing-title);
+  line-height: var(--line-height-title);
 }
 
 .prose {

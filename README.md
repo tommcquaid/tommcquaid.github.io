@@ -28,7 +28,6 @@ src/
     index.astro         Homepage (intro + case study tiles)
     about.astro         About
     writing.astro       Writing
-    resume.astro        Resume
     work/[slug].astro   Case study pages
   styles/               Global design system (CSS)
 public/

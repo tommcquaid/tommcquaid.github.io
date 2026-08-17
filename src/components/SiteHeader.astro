@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 interface Props {
-  current?: 'work' | 'about' | 'writing' | 'resume';
+  current?: 'work' | 'about' | 'writing';
 }
 
 const { current } = Astro.props;
@@ -19,7 +19,6 @@ const links = [
   { href: '/', id: 'work', label: 'work' },
   { href: '/about/', id: 'about', label: 'about' },
   { href: '/writing/', id: 'writing', label: 'writing' },
-  { href: '/resume/', id: 'resume', label: 'resume' },
 ] as const;
 ---
 

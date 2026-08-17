@@ -31,23 +31,11 @@
    ------------------------------------------------------------------------- */
 
 .card__label {
-  font-size: 0.8125rem;
   color: var(--color-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   margin-bottom: var(--space-sm);
 }
 
-.card__title {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 400;
-  line-height: var(--line-height-tight);
-  letter-spacing: -0.02em;
-}
-
 .card__subtitle {
-  font-size: var(--font-size-lead);
-  line-height: var(--line-height-tight);
   color: var(--color-muted);
   margin-top: var(--space-sm);
 }
@@ -56,7 +44,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm) var(--space-md);
-  font-size: 0.875rem;
   color: var(--color-muted);
   margin-top: var(--space-md);
   list-style: none;
@@ -85,10 +72,6 @@
   max-width: var(--text-max);
   margin-inline: auto;
   text-align: center;
-  font-size: var(--font-size-statement);
-  line-height: var(--line-height-tight);
-  letter-spacing: -0.02em;
-  font-weight: 400;
   border: none;
   padding: 0;
 }
@@ -96,9 +79,6 @@
 .card__quote {
   max-width: var(--text-max);
   margin-inline: auto;
-  font-size: var(--font-size-quote);
-  line-height: var(--line-height-tight);
-  letter-spacing: -0.015em;
   border: none;
   padding: 0;
 }
@@ -107,21 +87,21 @@
   content: "\201C";
 }
 
-.card__cite {
+.card__cite,
+.card__caption {
   display: block;
   margin-top: var(--space-sm);
-  font-size: 0.875rem;
   font-style: normal;
   color: var(--color-muted);
+}
+
+.card__caption {
+  text-align: center;
 }
 
 /* -------------------------------------------------------------------------
    1. Hero
    ------------------------------------------------------------------------- */
-
-.card--hero .card__title {
-  font-size: var(--font-size-hero);
-}
 
 .card--hero .card__inner {
   position: relative;
@@ -280,16 +260,8 @@
   text-align: center;
 }
 
-.card__metric-value {
-  font-size: var(--font-size-metric);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 400;
-}
-
 .card__metric-label {
   margin-top: 0.5rem;
-  font-size: 0.875rem;
   color: var(--color-muted);
   max-width: 16ch;
   margin-inline: auto;
@@ -311,7 +283,6 @@
 }
 
 .card__step-label {
-  font-size: 0.8125rem;
   color: var(--color-muted);
   margin-bottom: 0.5rem;
 }
@@ -354,7 +325,6 @@
   justify-content: center;
   gap: var(--space-md);
   margin-top: var(--space-lg);
-  font-size: 0.875rem;
 }
 
 .card--closing .card__nav a {

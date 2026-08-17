@@ -1,11 +1,13 @@
 ---
+import '@fontsource-variable/inter/wght.css';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 
 interface Props {
   title: string;
   description?: string;
-  current?: 'work' | 'about' | 'writing' | 'resume';
+  current?: 'work' | 'about' | 'writing';
 }
 
 const {
@@ -21,6 +23,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
     <title>{title}</title>
   </head>
   <body>

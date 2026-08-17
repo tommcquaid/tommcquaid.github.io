@@ -1,14 +1,33 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Visual from '../components/blocks/Visual.astro';
+
+// Drop a photo at public/images/about.jpg (or .png / .webp / .gif).
+const portraitSrc = [
+  '/images/about.jpg',
+  '/images/about.png',
+  '/images/about.webp',
+  '/images/about.gif',
+].find((src) => fs.existsSync(path.join(process.cwd(), 'public', src.slice(1))));
+
+// Right-column copy — edit anytime. Separate paragraphs with a blank line.
+const about = `
+Product design leader building products, systems, and teams that make sense. Over the past 13+ years, I’ve led design across finance, tech, education, and nonprofits, crafting digital experiences that work for real people with real-world constraints.
+`.trim();
+
+const paragraphs = about.split(/\n\s*\n/);
 ---
 
 <BaseLayout title="About — Tom McQuaid" current="about">
-  <article class="page">
-    <div class="page__content prose">
-      <h1 class="page__title">About</h1>
-      <div class="page__body">
-        <p>About page in progress.</p>
-      </div>
+  <h1 class="visually-hidden">About</h1>
+  <div class="home">
+    <div class="home__portrait">
+      <Visual src={portraitSrc} alt="Tom McQuaid" />
     </div>
-  </article>
+    <div class="home__intro prose">
+      {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
 </BaseLayout>
