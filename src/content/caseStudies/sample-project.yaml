@@ -1,0 +1,103 @@
+title: "Advisor Platform Redesign"
+subtitle: "Unifying fragmented tools into a coherent daily workflow for 6,500+ financial advisors."
+label: "Northwestern Mutual · 2022–Present"
+role: "Design Lead"
+team: "12 designers"
+year: 2024
+order: 1
+draft: false
+
+blocks:
+  - type: thesis
+    title: "Advisors weren't struggling with individual features."
+    text: "They were struggling with the gaps between them."
+
+  - type: narrative
+    title: "The problem"
+    paragraphs:
+      - "Over a decade of acquisitions had left advisors juggling five separate tools to manage a single client relationship. Each product worked fine in isolation. Together, they created constant context-switching."
+      - "We needed to unify the experience without a multi-year rewrite — and without disrupting advisors mid-workflow during the transition."
+
+  - type: quote
+    quote: "I used to dread opening the platform. Now it's the first thing I check every morning."
+    attribution: "Senior Financial Advisor, Chicago"
+
+  - type: textVisual
+    title: "Mapping the daily workflow"
+    paragraphs:
+      - "We shadowed 24 advisors across four markets to understand how they actually moved through their day — not how our org chart assumed they would."
+    image:
+      alt: "Workflow diagram"
+
+  - type: textVisual
+    title: "A single navigation model"
+    paragraphs:
+      - "Rather than redesigning each tool independently, we designed a shared shell that advisors could learn once and carry everywhere."
+    image:
+      alt: "Navigation concept"
+    reverse: true
+
+  - type: containedVisual
+    image:
+      alt: "Product screenshot"
+    caption: "Unified advisor dashboard"
+
+  - type: fullBleedVisual
+    image:
+      alt: "Platform in context"
+
+  - type: visualGrid
+    columns: 2
+    images:
+      - alt: "Detail screen 1"
+      - alt: "Detail screen 2"
+
+  - type: visualGrid
+    columns: 3
+    images:
+      - alt: "Component 1"
+      - alt: "Component 2"
+      - alt: "Component 3"
+
+  - type: metric
+    items:
+      - value: "40%"
+        label: "Reduction in context-switching"
+      - value: "6,500+"
+        label: "Advisors on unified platform"
+      - value: "3→1"
+        label: "Navigation models consolidated"
+
+  - type: process
+    steps:
+      - label: "01 · Discover"
+        image:
+          alt: "Discover phase"
+      - label: "02 · Define"
+        image:
+          alt: "Define phase"
+      - label: "03 · Deliver"
+        image:
+          alt: "Deliver phase"
+
+  - type: comparison
+    before:
+      label: "Before"
+      image:
+        alt: "Fragmented tool landscape"
+    after:
+      label: "After"
+      image:
+        alt: "Unified platform"
+
+  - type: reflection
+    title: "What I'd do differently"
+    paragraphs:
+      - "We waited too long to involve engineering in workflow mapping. Bringing tech leads into discovery earlier would have surfaced integration constraints that shaped our later compromises."
+    nav:
+      prev:
+        label: "All projects"
+        href: "/"
+      next:
+        label: "Next project"
+        href: "/"

@@ -1,0 +1,23 @@
+---
+import Card from './Card.astro';
+import type { z } from 'astro:content';
+import type { metricBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof metricBlock>;
+interface Props extends Block {}
+
+const { items } = Astro.props;
+---
+
+<Card variant="metric" label="Outcomes">
+  <div class="card__metrics">
+    {
+      items.map((item) => (
+        <div class="card__metric">
+          <p class="card__metric-value">{item.value}</p>
+          <p class="card__metric-label">{item.label}</p>
+        </div>
+      ))
+    }
+  </div>
+</Card>

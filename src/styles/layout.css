@@ -1,0 +1,105 @@
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* Readable text column — constrain content, not the canvas */
+.prose {
+  max-width: var(--text-max);
+}
+
+.prose--lead {
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-tight);
+}
+
+/* Large product visuals */
+.visual {
+  width: min(var(--visual-max), 100%);
+  margin-inline: auto;
+}
+
+/* 4-column editorial grid */
+.grid-editorial {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--gutter);
+  padding-inline: var(--gutter);
+}
+
+.grid-editorial > .span-2 {
+  grid-column: span 2;
+}
+
+.grid-editorial > .span-3 {
+  grid-column: span 3;
+}
+
+.grid-editorial > .span-4 {
+  grid-column: span 4;
+}
+
+@media (max-width: 768px) {
+  .grid-editorial {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-editorial > .span-3,
+  .grid-editorial > .span-4 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-editorial > .span-2,
+  .grid-editorial > .span-3,
+  .grid-editorial > .span-4 {
+    grid-column: span 1;
+  }
+}
+
+/* Project intro block */
+.project-intro {
+  padding-block: var(--space-lg);
+}
+
+.project-intro__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+}
+
+.project-intro__label {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.project-intro__meta {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+}
+
+/* Placeholder blocks for Figma iteration */
+.placeholder {
+  aspect-ratio: var(--placeholder-ratio, 16 / 9);
+  background-color: var(--placeholder-color, #eee);
+  width: 100%;
+}
+
+.placeholder--square {
+  --placeholder-ratio: 1;
+}
+
+.placeholder--portrait {
+  --placeholder-ratio: 3 / 4;
+}

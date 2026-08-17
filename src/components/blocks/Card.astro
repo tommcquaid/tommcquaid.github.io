@@ -1,0 +1,16 @@
+---
+interface Props {
+  variant: string;
+  label?: string;
+  class?: string;
+}
+
+const { variant, label, class: className } = Astro.props;
+---
+
+<section
+  class:list={['card', `card--${variant}`, className]}
+  aria-label={label}
+>
+  <slot />
+</section>

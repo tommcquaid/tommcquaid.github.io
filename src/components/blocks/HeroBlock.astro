@@ -1,0 +1,45 @@
+---
+import Card from './Card.astro';
+import Visual from './Visual.astro';
+import type { CaseStudy } from '../../schemas/blocks';
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+
+const metaItems = [
+  ...(study.role ? [study.role] : []),
+  ...(study.team ? [study.team] : []),
+  ...(study.meta ?? []),
+];
+---
+
+<Card
+  variant="hero"
+  class={study.cover ? 'card--hero-has-bg' : undefined}
+  label="Project hero"
+>
+  {
+    study.cover && (
+      <figure class="card__bg" aria-hidden="true">
+        <Visual src={study.cover} alt="" />
+      </figure>
+    )
+  }
+  <div class="card__inner">
+    {study.label && <p class="card__label">{study.label}</p>}
+    <h1 class="card__title">{study.title}</h1>
+    {study.subtitle && <p class="card__subtitle">{study.subtitle}</p>}
+    {
+      metaItems.length > 0 && (
+        <ul class="card__meta">
+          {metaItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</Card>

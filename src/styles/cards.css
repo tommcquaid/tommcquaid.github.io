@@ -1,0 +1,441 @@
+/*
+ * Card system
+ *
+ * One shell (.card) + type modifiers (.card--hero, .card--quote, etc.).
+ * Desktop: 100vh sticky stack. Mobile: normal document flow.
+ */
+
+/* -------------------------------------------------------------------------
+   Shell
+   ------------------------------------------------------------------------- */
+
+.card-stack {
+  /* Page canvas stays fluid — no max-width here */
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter);
+  background-color: var(--color-bg);
+}
+
+.card__inner {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------
+   Shared content primitives
+   ------------------------------------------------------------------------- */
+
+.card__label {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-sm);
+}
+
+.card__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 400;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+}
+
+.card__subtitle {
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-tight);
+  color: var(--color-muted);
+  margin-top: var(--space-sm);
+}
+
+.card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-top: var(--space-md);
+  list-style: none;
+  padding: 0;
+}
+
+.card__text {
+  max-width: var(--text-max);
+}
+
+.card__text p + p {
+  margin-top: 1em;
+}
+
+.card__media {
+  margin: 0;
+  width: 100%;
+}
+
+.card__media img {
+  width: 100%;
+  height: auto;
+}
+
+.card__statement {
+  max-width: var(--text-max);
+  margin-inline: auto;
+  text-align: center;
+  font-size: var(--font-size-statement);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  border: none;
+  padding: 0;
+}
+
+.card__quote {
+  max-width: var(--text-max);
+  margin-inline: auto;
+  font-size: var(--font-size-quote);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.015em;
+  border: none;
+  padding: 0;
+}
+
+.card__quote::before {
+  content: "\201C";
+}
+
+.card__cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: 0.875rem;
+  font-style: normal;
+  color: var(--color-muted);
+}
+
+/* -------------------------------------------------------------------------
+   1. Hero
+   ------------------------------------------------------------------------- */
+
+.card--hero .card__title {
+  font-size: var(--font-size-hero);
+}
+
+.card--hero .card__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.card__bg {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+.card__bg img,
+.card__bg .placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card--hero-has-bg {
+  color: #fff;
+}
+
+.card--hero-has-bg .card__subtitle,
+.card--hero-has-bg .card__meta,
+.card--hero-has-bg .card__label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.card--hero-has-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* -------------------------------------------------------------------------
+   2. Thesis / Statement
+   ------------------------------------------------------------------------- */
+
+.card--statement {
+  text-align: center;
+}
+
+/* -------------------------------------------------------------------------
+   3. Text / Narrative
+   ------------------------------------------------------------------------- */
+
+.card--narrative .card__inner {
+  max-width: var(--text-max);
+}
+
+.card--narrative .card__title {
+  margin-bottom: var(--space-md);
+}
+
+/* -------------------------------------------------------------------------
+   4. Quote
+   ------------------------------------------------------------------------- */
+
+.card--quote {
+  text-align: center;
+}
+
+/* -------------------------------------------------------------------------
+   5. Text + Visual (split)
+   ------------------------------------------------------------------------- */
+
+.card__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  width: 100%;
+  align-items: center;
+}
+
+.card--split-reverse .card__content {
+  order: 2;
+}
+
+.card--split-reverse .card__media {
+  order: 1;
+}
+
+/* -------------------------------------------------------------------------
+   6. Contained Visual
+   ------------------------------------------------------------------------- */
+
+.card--contained .card__media {
+  width: min(var(--visual-max), 100%);
+  max-height: var(--visual-max-height);
+  margin-inline: auto;
+}
+
+.card--contained .card__media img,
+.card--contained .card__media .placeholder {
+  width: auto;
+  max-width: 100%;
+  max-height: var(--visual-max-height);
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+/* -------------------------------------------------------------------------
+   7. Full-Bleed Visual
+   ------------------------------------------------------------------------- */
+
+.card--full-bleed {
+  padding: 0;
+}
+
+.card--full-bleed .card__media {
+  height: 100%;
+}
+
+.card--full-bleed .card__media img,
+.card--full-bleed .card__media .placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card--full-bleed .placeholder {
+  aspect-ratio: unset;
+}
+
+/* -------------------------------------------------------------------------
+   8. Visual Grid
+   ------------------------------------------------------------------------- */
+
+.card__grid {
+  display: grid;
+  gap: var(--gutter);
+  width: 100%;
+}
+
+.card__grid--2 { grid-template-columns: repeat(2, 1fr); }
+.card__grid--3 { grid-template-columns: repeat(3, 1fr); }
+.card__grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* -------------------------------------------------------------------------
+   9. Metric / Outcome
+   ------------------------------------------------------------------------- */
+
+.card__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  width: 100%;
+}
+
+.card__metric {
+  text-align: center;
+}
+
+.card__metric-value {
+  font-size: var(--font-size-metric);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+.card__metric-label {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  max-width: 16ch;
+  margin-inline: auto;
+}
+
+/* -------------------------------------------------------------------------
+   10. Process / Sequence
+   ------------------------------------------------------------------------- */
+
+.card__process {
+  display: flex;
+  gap: var(--gutter);
+  width: 100%;
+}
+
+.card__step {
+  flex: 1;
+  min-width: 0;
+}
+
+.card__step-label {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.card--process-vertical .card__process {
+  flex-direction: column;
+}
+
+/* -------------------------------------------------------------------------
+   11. Comparison
+   ------------------------------------------------------------------------- */
+
+.card__compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  width: 100%;
+  align-items: start;
+}
+
+.card__compare-item {
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+   12. Closing / Reflection
+   ------------------------------------------------------------------------- */
+
+.card--closing .card__inner {
+  max-width: var(--text-max);
+  text-align: center;
+}
+
+.card--closing .card__title {
+  margin-bottom: var(--space-md);
+}
+
+.card--closing .card__nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  font-size: 0.875rem;
+}
+
+.card--closing .card__nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.card--closing .card__nav a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.card--closing .card__media {
+  margin-top: var(--space-lg);
+  max-width: var(--visual-max);
+  margin-inline: auto;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive — collapse multi-column layouts
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .card__split,
+  .card__compare {
+    grid-template-columns: 1fr;
+  }
+
+  .card--split-reverse .card__content,
+  .card--split-reverse .card__media {
+    order: unset;
+  }
+
+  .card__grid--2,
+  .card__grid--3,
+  .card__grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .card__process {
+    flex-direction: column;
+  }
+}
+
+/* Full-bleed fallback height when sticky is off */
+@media not ((min-width: 1024px) and (min-height: 700px)) {
+  .card--full-bleed .card__media {
+    min-height: 60vh;
+  }
+
+  .card--hero-has-bg {
+    min-height: 70vh;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Sticky behavior (desktop only)
+   ------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) and (min-height: 700px) {
+  .card {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  /* Text-heavy cards: scroll within the viewport if needed */
+  .card--narrative,
+  .card--closing {
+    overflow-y: auto;
+    align-items: flex-start;
+    padding-block: var(--space-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    position: static;
+    height: auto;
+    min-height: auto;
+    overflow-y: visible;
+  }
+}

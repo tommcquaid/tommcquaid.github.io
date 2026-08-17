@@ -1,0 +1,23 @@
+---
+import Card from './Card.astro';
+import Visual from './Visual.astro';
+import type { z } from 'astro:content';
+import type { visualGridBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof visualGridBlock>;
+interface Props extends Block {}
+
+const { columns, images } = Astro.props;
+---
+
+<Card variant="grid" label={`Visual grid (${columns}-up)`}>
+  <div class={`card__grid card__grid--${columns}`}>
+    {
+      images.map((image) => (
+        <figure class="card__media">
+          <Visual {...image} />
+        </figure>
+      ))
+    }
+  </div>
+</Card>

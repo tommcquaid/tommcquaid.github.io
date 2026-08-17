@@ -1,0 +1,24 @@
+---
+import type { z } from 'astro:content';
+import type { imageSchema } from '../../schemas/blocks';
+
+type Image = z.infer<typeof imageSchema>;
+
+interface Props extends Image {
+  class?: string;
+}
+
+const { src, alt, class: className } = Astro.props;
+---
+
+{
+  src ? (
+    <img src={src} alt={alt} class={className} loading="lazy" />
+  ) : (
+    <div
+      class:list={['placeholder', className]}
+      role="img"
+      aria-label={alt}
+    />
+  )
+}

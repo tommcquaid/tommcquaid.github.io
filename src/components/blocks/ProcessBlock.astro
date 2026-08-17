@@ -1,0 +1,34 @@
+---
+import Card from './Card.astro';
+import Visual from './Visual.astro';
+import type { z } from 'astro:content';
+import type { processBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof processBlock>;
+interface Props extends Block {}
+
+const { steps, vertical } = Astro.props;
+---
+
+<Card
+  variant="process"
+  class={vertical ? 'card--process-vertical' : undefined}
+  label="Process"
+>
+  <div class="card__process">
+    {
+      steps.map((step) => (
+        <div class="card__step">
+          <p class="card__step-label">{step.label}</p>
+          {
+            step.image && (
+              <figure class="card__media">
+                <Visual {...step.image} />
+              </figure>
+            )
+          }
+        </div>
+      ))
+    }
+  </div>
+</Card>

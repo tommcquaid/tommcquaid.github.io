@@ -1,0 +1,17 @@
+---
+import Card from './Card.astro';
+import Visual from './Visual.astro';
+import type { z } from 'astro:content';
+import type { fullBleedVisualBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof fullBleedVisualBlock>;
+interface Props extends Block {}
+
+const { image } = Astro.props;
+---
+
+<Card variant="full-bleed" label={image.alt}>
+  <figure class="card__media">
+    <Visual {...image} />
+  </figure>
+</Card>

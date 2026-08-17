@@ -1,0 +1,58 @@
+@import './reset.css';
+@import './tokens.css';
+@import './layout.css';
+@import './cards.css';
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--gutter);
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--gutter);
+}
+
+.site-nav {
+  padding: var(--gutter);
+  font-size: 0.875rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.project-list {
+  padding: var(--gutter);
+  list-style: none;
+}
+
+.project-list li + li {
+  margin-top: var(--space-sm);
+}
+
+.project-list a {
+  text-decoration: none;
+}
+
+.project-list a:hover {
+  text-decoration: underline;
+}
+
+.project-list__title {
+  font-size: var(--font-size-lead);
+}
+
+.project-list__meta {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}

@@ -1,0 +1,17 @@
+---
+import Card from './Card.astro';
+import type { z } from 'astro:content';
+import type { thesisBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof thesisBlock>;
+interface Props extends Block {}
+
+const { title, text } = Astro.props;
+---
+
+<Card variant="statement" label="Thesis">
+  <blockquote class="card__statement">
+    {title && <p>{title}</p>}
+    <p>{text}</p>
+  </blockquote>
+</Card>

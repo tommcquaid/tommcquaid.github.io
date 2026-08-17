@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const studies = (await getCollection('caseStudies'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+---
+
+<BaseLayout title="Tom McQuaid">
+  {
+    studies.length === 0 ? (
+      <p class="prose" style="padding: var(--gutter); color: var(--color-muted);">
+        Portfolio in progress.
+      </p>
+    ) : (
+      <ul class="project-list">
+        {
+          studies.map((study) => (
+            <li>
+              <a href={`/work/${study.id}/`}>
+                <span class="project-list__title">{study.data.title}</span>
+                {(study.data.role || study.data.year) && (
+                  <span class="project-list__meta">
+                    {[study.data.role, study.data.year].filter(Boolean).join(' · ')}
+                  </span>
+                )}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    )
+  }
+</BaseLayout>

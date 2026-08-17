@@ -1,0 +1,35 @@
+---
+import Card from './Card.astro';
+import Visual from './Visual.astro';
+import type { z } from 'astro:content';
+import type { textVisualBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof textVisualBlock>;
+interface Props extends Block {}
+
+const { title, paragraphs, image, reverse } = Astro.props;
+---
+
+<Card
+  variant="split"
+  class={reverse ? 'card--split-reverse' : undefined}
+  label={title ?? 'Text and visual'}
+>
+  <div class="card__split">
+    <div class="card__content">
+      {title && <h2 class="card__title">{title}</h2>}
+      {
+        paragraphs && paragraphs.length > 0 && (
+          <div class="card__text">
+            {paragraphs.map((p) => (
+              <p>{p}</p>
+            ))}
+          </div>
+        )
+      }
+    </div>
+    <figure class="card__media">
+      <Visual {...image} />
+    </figure>
+  </div>
+</Card>

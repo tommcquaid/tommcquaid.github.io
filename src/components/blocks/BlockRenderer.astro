@@ -1,0 +1,38 @@
+---
+import type { Block } from '../../schemas/blocks';
+import ThesisBlock from './ThesisBlock.astro';
+import NarrativeBlock from './NarrativeBlock.astro';
+import QuoteBlock from './QuoteBlock.astro';
+import TextVisualBlock from './TextVisualBlock.astro';
+import ContainedVisualBlock from './ContainedVisualBlock.astro';
+import FullBleedVisualBlock from './FullBleedVisualBlock.astro';
+import VisualGridBlock from './VisualGridBlock.astro';
+import MetricBlock from './MetricBlock.astro';
+import ProcessBlock from './ProcessBlock.astro';
+import ComparisonBlock from './ComparisonBlock.astro';
+import ReflectionBlock from './ReflectionBlock.astro';
+
+interface Props {
+  block: Block;
+}
+
+const { block } = Astro.props;
+
+const components = {
+  thesis: ThesisBlock,
+  narrative: NarrativeBlock,
+  quote: QuoteBlock,
+  textVisual: TextVisualBlock,
+  containedVisual: ContainedVisualBlock,
+  fullBleedVisual: FullBleedVisualBlock,
+  visualGrid: VisualGridBlock,
+  metric: MetricBlock,
+  process: ProcessBlock,
+  comparison: ComparisonBlock,
+  reflection: ReflectionBlock,
+} as const;
+
+const Component = components[block.type];
+---
+
+{Component && <Component {...block} />}

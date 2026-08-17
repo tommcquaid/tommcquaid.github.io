@@ -1,0 +1,19 @@
+---
+import Card from './Card.astro';
+import type { z } from 'astro:content';
+import type { quoteBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof quoteBlock>;
+interface Props extends Block {}
+
+const { quote, attribution } = Astro.props;
+---
+
+<Card variant="quote" label="Quote">
+  <figure>
+    <blockquote class="card__quote">
+      <p>{quote}</p>
+    </blockquote>
+    {attribution && <figcaption class="card__cite">{attribution}</figcaption>}
+  </figure>
+</Card>

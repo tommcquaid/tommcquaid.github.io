@@ -1,0 +1,24 @@
+---
+import Card from './Card.astro';
+import Visual from './Visual.astro';
+import type { z } from 'astro:content';
+import type { comparisonBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof comparisonBlock>;
+interface Props extends Block {}
+
+const { before, after } = Astro.props;
+---
+
+<Card variant="comparison" label="Comparison">
+  <div class="card__compare">
+    <figure class="card__compare-item">
+      {before.label && <p class="card__label">{before.label}</p>}
+      <Visual {...before.image} />
+    </figure>
+    <figure class="card__compare-item">
+      {after.label && <p class="card__label">{after.label}</p>}
+      <Visual {...after.image} />
+    </figure>
+  </div>
+</Card>

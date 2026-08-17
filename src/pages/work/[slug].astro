@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudy from '../../components/CaseStudy.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const studies = await getCollection('caseStudies', ({ data }) => !data.draft);
+
+  return studies.map((study) => ({
+    params: { slug: study.id },
+    props: { study: study.data },
+  }));
+}
+
+interface Props {
+  study: import('../../schemas/blocks').CaseStudy;
+}
+
+const { study } = Astro.props;
+---
+
+<BaseLayout title={`${study.title} — Tom McQuaid`} description={study.subtitle}>
+  <CaseStudy study={study} />
+</BaseLayout>

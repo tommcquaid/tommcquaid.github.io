@@ -1,0 +1,31 @@
+title: "Project Title"
+subtitle: "One-line project summary."
+label: "Company · Year"
+role: "Your Role"
+year: 2026
+order: 2
+draft: true
+
+blocks:
+  - type: thesis
+    text: "A single sharp insight."
+
+  - type: narrative
+    title: "Section headline"
+    paragraphs:
+      - "First paragraph of context."
+
+  - type: containedVisual
+    image:
+      src: "/images/project-name/hero.jpg"
+      alt: "Describe the visual"
+    caption: "Optional caption"
+
+  - type: reflection
+    title: "Closing thought"
+    paragraphs:
+      - "What changed, what you learned, or what you'd do differently."
+    nav:
+      prev:
+        label: "All projects"
+        href: "/"

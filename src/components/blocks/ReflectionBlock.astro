@@ -1,0 +1,37 @@
+---
+import Card from './Card.astro';
+import Visual from './Visual.astro';
+import type { z } from 'astro:content';
+import type { reflectionBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof reflectionBlock>;
+interface Props extends Block {}
+
+const { title, paragraphs, image, nav } = Astro.props;
+---
+
+<Card variant="closing" label="Reflection">
+  <div class="card__inner">
+    <h2 class="card__title">{title}</h2>
+    <div class="card__text">
+      {paragraphs.map((p) => (
+        <p>{p}</p>
+      ))}
+    </div>
+    {
+      image && (
+        <figure class="card__media">
+          <Visual {...image} />
+        </figure>
+      )
+    }
+    {
+      nav && (nav.prev || nav.next) && (
+        <nav class="card__nav" aria-label="Project navigation">
+          {nav.prev && <a href={nav.prev.href}>← {nav.prev.label}</a>}
+          {nav.next && <a href={nav.next.href}>{nav.next.label} →</a>}
+        </nav>
+      )
+    }
+  </div>
+</Card>

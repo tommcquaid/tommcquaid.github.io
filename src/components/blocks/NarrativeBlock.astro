@@ -1,0 +1,21 @@
+---
+import Card from './Card.astro';
+import type { z } from 'astro:content';
+import type { narrativeBlock } from '../../schemas/blocks';
+
+type Block = z.infer<typeof narrativeBlock>;
+interface Props extends Block {}
+
+const { title, paragraphs } = Astro.props;
+---
+
+<Card variant="narrative" label={title}>
+  <div class="card__inner">
+    <h2 class="card__title">{title}</h2>
+    <div class="card__text">
+      {paragraphs.map((p) => (
+        <p>{p}</p>
+      ))}
+    </div>
+  </div>
+</Card>
