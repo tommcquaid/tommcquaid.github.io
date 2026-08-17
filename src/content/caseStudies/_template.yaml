@@ -5,6 +5,9 @@ role: "Your Role"
 year: 2026
 order: 2
 draft: true
+preview:
+  src: "/images/project-name/preview.jpg"
+  alt: "Describe the homepage tile"
 
 blocks:
   - type: thesis

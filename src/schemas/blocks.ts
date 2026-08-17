@@ -157,6 +157,8 @@ export const caseStudySchema = z.object({
   team: z.string().optional(),
   meta: z.array(z.string()).optional(),
   cover: z.string().optional(),
+  /** Homepage tile image — independent of the case study hero `cover`. */
+  preview: imageSchema.optional(),
   background: backgroundSchema,
   draft: z.boolean().default(false),
   order: z.number().optional(),

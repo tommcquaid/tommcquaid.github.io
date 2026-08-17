@@ -1,12 +1,20 @@
 ---
 import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
 
 interface Props {
   title: string;
   description?: string;
+  hideNav?: boolean;
+  current?: 'work' | 'about' | 'writing' | 'resume';
 }
 
-const { title, description = 'Tom McQuaid — Product Design Leader' } = Astro.props;
+const {
+  title,
+  description = 'Tom McQuaid — Product Design Leader',
+  hideNav = false,
+  current,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,9 +27,13 @@ const { title, description = 'Tom McQuaid — Product Design Leader' } = Astro.p
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <nav class="site-nav" aria-label="Site">
-      <a href="/">Tom McQuaid</a>
-    </nav>
+    {
+      !hideNav && (
+        <header class="site-header">
+          <SiteHeader current={current} />
+        </header>
+      )
+    }
     <main id="main">
       <slot />
     </main>

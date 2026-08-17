@@ -25,7 +25,10 @@ src/
     BlockRenderer.astro Maps block.type → component
     CaseStudy.astro     Assembles hero + block stack
   pages/
-    index.astro         Project index
+    index.astro         Homepage (intro + case study tiles)
+    about.astro         About
+    writing.astro       Writing
+    resume.astro        Resume
     work/[slug].astro   Case study pages
   styles/               Global design system (CSS)
 public/
@@ -37,9 +40,10 @@ public/
 1. Duplicate `src/content/caseStudies/_template.yaml`
 2. Rename to `your-project.yaml`
 3. Fill in metadata (title, subtitle, role, year, etc.)
-4. Add a sequence of `blocks` — each block is `{ type, ...fields }`
-5. Add images to `public/images/your-project/` and reference as `/images/your-project/file.jpg`
-6. Set `draft: false` when ready to publish
+4. Set a homepage tile image with `preview.src` (optional `preview.alt`). Title and optional `subtitle` appear under the image.
+5. Add a sequence of `blocks` — each block is `{ type, ...fields }`
+6. Add images to `public/images/your-project/` and reference as `/images/your-project/file.jpg`
+7. Set `draft: false` when ready to publish
 
 No layout code, CSS, or component changes required.
 
@@ -60,6 +64,8 @@ No layout code, CSS, or component changes required.
 | `reflection` | Closing text + optional nav links |
 
 The **hero card** is auto-generated from top-level metadata (`title`, `subtitle`, `label`, `role`, `team`, `cover`, etc.) — not a block.
+
+Homepage tiles use `title`, optional `subtitle` as the subhead, and `preview` for the image (`preview.src` falls back to `cover` if omitted). Edit the homepage intro copy in `src/pages/index.astro`.
 
 ### Surface backgrounds
 

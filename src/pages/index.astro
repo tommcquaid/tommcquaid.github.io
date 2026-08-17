@@ -1,35 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Visual from '../components/blocks/Visual.astro';
 import { getCollection } from 'astro:content';
 
 const studies = (await getCollection('caseStudies'))
   .filter((entry) => !entry.data.draft)
   .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+// Right-column intro — edit this copy anytime.
+const intro =
+  "Product design leader building products, systems, and teams that make sense. Over the past 13+ years, I’ve led design across finance, tech, education, and nonprofits, crafting digital experiences that work for real people with real-world constraints.";
 ---
 
-<BaseLayout title="Tom McQuaid">
-  {
-    studies.length === 0 ? (
-      <p class="prose" style="padding: var(--gutter); color: var(--color-muted);">
-        Portfolio in progress.
-      </p>
-    ) : (
-      <ul class="project-list">
-        {
-          studies.map((study) => (
-            <li>
-              <a href={`/work/${study.id}/`}>
-                <span class="project-list__title">{study.data.title}</span>
-                {(study.data.role || study.data.year) && (
-                  <span class="project-list__meta">
-                    {[study.data.role, study.data.year].filter(Boolean).join(' · ')}
-                  </span>
+<BaseLayout title="Tom McQuaid" hideNav current="work">
+  <div class="home">
+    <SiteHeader current="work" nameIsHeading />
+
+    <p class="home__intro">{intro}</p>
+
+    <section class="home__work" id="work" aria-label="Work">
+      {
+        studies.length === 0 ? (
+          <p class="home__empty">Portfolio in progress.</p>
+        ) : (
+          studies.map((study) => {
+            const previewSrc = study.data.preview?.src ?? study.data.cover;
+            const previewAlt = study.data.preview?.alt ?? study.data.title;
+
+            return (
+              <a class="home-tile" href={`/work/${study.id}/`}>
+                <div class="home-tile__image">
+                  <Visual src={previewSrc} alt={previewAlt} />
+                </div>
+                <h2 class="home-tile__title">{study.data.title}</h2>
+                {study.data.subtitle && (
+                  <p class="home-tile__subhead">{study.data.subtitle}</p>
                 )}
               </a>
-            </li>
-          ))
-        }
-      </ul>
-    )
-  }
+            );
+          })
+        )
+      }
+    </section>
+  </div>
 </BaseLayout>

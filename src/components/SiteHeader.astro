@@ -1,0 +1,37 @@
+---
+interface Props {
+  current?: 'work' | 'about' | 'writing' | 'resume';
+  nameIsHeading?: boolean;
+}
+
+const { current, nameIsHeading = false } = Astro.props;
+
+const links = [
+  { href: '/#work', id: 'work', label: 'work' },
+  { href: '/about/', id: 'about', label: 'about' },
+  { href: '/writing/', id: 'writing', label: 'writing' },
+  { href: '/resume/', id: 'resume', label: 'resume' },
+] as const;
+---
+
+{
+  nameIsHeading ? (
+    <h1 class="site-header__name">Tom McQuaid</h1>
+  ) : (
+    <a class="site-header__name" href="/">
+      Tom McQuaid
+    </a>
+  )
+}
+<nav class="site-header__nav" aria-label="Site">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        aria-current={current === link.id ? 'page' : undefined}
+      >
+        {link.label}
+      </a>
+    ))
+  }
+</nav>
