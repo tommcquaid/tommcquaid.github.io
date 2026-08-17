@@ -31,12 +31,18 @@
   border: 0;
 }
 
-/* Shared two-column shell — header and page content use the same columns */
+/* Shared two-column shell */
+.site-header,
+.home,
+.page,
+.home__work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .site-header,
 .home,
 .page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   column-gap: var(--gutter);
   padding-inline: var(--gutter);
   align-items: start;
@@ -49,9 +55,19 @@
 
 .home,
 .page {
-  row-gap: var(--space-md);
   padding-top: var(--space-md);
   padding-bottom: var(--gutter);
+}
+
+.site-header__name,
+.site-header__nav a {
+  text-decoration: none;
+}
+
+.site-header__name:hover,
+.site-header__nav a:hover,
+.site-header__nav a[aria-current='page'] {
+  text-decoration: underline;
 }
 
 .site-header__name {
@@ -60,15 +76,9 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: var(--line-height-tight);
-  text-decoration: none;
-}
-
-.site-header__name:hover {
-  text-decoration: underline;
 }
 
 .site-header__name img {
-  display: block;
   height: 1.5rem;
   width: auto;
   max-width: min(100%, 16rem);
@@ -88,19 +98,9 @@
   gap: 0.5rem 1.25rem;
 }
 
-.site-header__nav a {
-  text-decoration: none;
-}
-
-.site-header__nav a:hover,
-.site-header__nav a[aria-current='page'] {
-  text-decoration: underline;
-}
-
 .home__intro,
 .page__content {
   grid-column: 2;
-  max-width: var(--text-max);
 }
 
 .home__intro {
@@ -110,10 +110,8 @@
 
 .home__work {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: var(--gutter);
-  padding-top: var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
 .home__empty {
@@ -139,16 +137,19 @@
   object-fit: cover;
 }
 
-.home-tile__title {
+.home-tile__title,
+.page__title {
   font-size: var(--font-size-lead);
   font-weight: 400;
   line-height: var(--line-height-tight);
+}
+
+.home-tile__title {
   letter-spacing: -0.02em;
 }
 
 .home-tile__subhead {
   font-size: 0.9375rem;
-  line-height: var(--line-height-base);
   color: var(--color-muted);
 }
 
@@ -156,15 +157,8 @@
   text-decoration: underline;
 }
 
-.page__title {
-  font-size: var(--font-size-lead);
-  font-weight: 400;
-  line-height: var(--line-height-tight);
-}
-
 .page__body {
   margin-top: 1em;
-  color: var(--color-text);
 }
 
 @media (max-width: 800px) {
