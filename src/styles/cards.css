@@ -55,7 +55,7 @@
 }
 
 .card__text p + p {
-  margin-top: 1em;
+  margin-top: var(--space-paragraph);
 }
 
 .card__media {

@@ -1,21 +1,44 @@
 :root {
   /* Layout */
   --gutter: clamp(24px, 3vw, 64px);
-  --text-max: 650px;
-  --column-max: 800px;
   --visual-max: 75vw;
   --visual-max-height: 75vh;
   --grid-columns: 4;
 
-  /* Typography — two sizes. Weight and color do the rest. */
+  /* =========================================================================
+     Typography — edit type here only
+     Two sizes. Weight, color, and these spacings do the rest.
+     ========================================================================= */
+
   --font-sans: "Inter Variable", Inter, sans-serif;
-  --font-size-body: 0.9375rem;
-  --font-size-title: 1.5rem;
-  --line-height-body: 1.6;
-  --line-height-title: 1.12;
-  --letter-spacing-title: -0.025em;
+
+  /* Size */
+  --font-size-body: 0.9375rem; /* nav, copy, subtitles, dates */
+  --font-size-title: 1.5rem; /* name, case-study titles, writing titles */
+
+  /* Weight */
   --font-weight-body: 400;
   --font-weight-title: 620;
+
+  /* Leading */
+  --line-height-body: 1.6;
+  --line-height-title: 1.12;
+
+  /* Tracking */
+  --letter-spacing-body: 0;
+  --letter-spacing-title: -0.025em;
+
+  /* Measure (line length) */
+  --text-max: 650px; /* intro / prose */
+  --column-max: 800px; /* writing column */
+
+  /* Space between text */
+  --space-paragraph: 1em; /* stacked paragraphs */
+  --space-title-stack: 0.75rem; /* tile image → title → subhead */
+  --space-list-row: 1.25rem; /* writing list, vertical padding */
+  --space-list-gap: 1.5rem; /* writing title ↔ date */
+  --space-nav: 1.25rem; /* gap between nav links */
+  --space-nav-wrap: 0.5rem; /* when nav links wrap to a new line */
 
   /* Color */
   --color-text: #111;

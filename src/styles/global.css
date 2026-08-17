@@ -92,7 +92,7 @@
 .site-header__nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
+  gap: var(--space-nav-wrap) var(--space-nav);
 }
 
 .home__intro,
@@ -105,7 +105,7 @@
 }
 
 .home__intro p + p {
-  margin-top: 1em;
+  margin-top: var(--space-paragraph);
 }
 
 .home__portrait img,
@@ -129,7 +129,7 @@
 .home-tile {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--space-title-stack);
   text-decoration: none;
 }
 
@@ -153,7 +153,7 @@
 }
 
 .page__body {
-  margin-top: 1em;
+  margin-top: var(--space-paragraph);
 }
 
 /* One-column writing */
@@ -183,8 +183,8 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1.5rem;
-  padding: 1.25rem 0;
+  gap: var(--space-list-gap);
+  padding-block: var(--space-list-row);
   text-decoration: none;
 }
 
