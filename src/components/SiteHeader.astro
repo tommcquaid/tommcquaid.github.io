@@ -1,28 +1,31 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
+
 interface Props {
   current?: 'work' | 'about' | 'writing' | 'resume';
-  nameIsHeading?: boolean;
 }
 
-const { current, nameIsHeading = false } = Astro.props;
+const { current } = Astro.props;
+
+const name = 'Tom McQuaid';
+
+// Drop a PNG or GIF at public/images/wordmark.png (or .gif).
+const wordmarkSrc = ['/images/wordmark.png', '/images/wordmark.gif'].find((src) =>
+  fs.existsSync(path.join(process.cwd(), 'public', src.slice(1)))
+);
 
 const links = [
-  { href: '/#work', id: 'work', label: 'work' },
+  { href: '/', id: 'work', label: 'work' },
   { href: '/about/', id: 'about', label: 'about' },
   { href: '/writing/', id: 'writing', label: 'writing' },
   { href: '/resume/', id: 'resume', label: 'resume' },
 ] as const;
 ---
 
-{
-  nameIsHeading ? (
-    <h1 class="site-header__name">Tom McQuaid</h1>
-  ) : (
-    <a class="site-header__name" href="/">
-      Tom McQuaid
-    </a>
-  )
-}
+<a class="site-header__name" href="/">
+  {wordmarkSrc ? <img src={wordmarkSrc} alt={name} /> : name}
+</a>
 <nav class="site-header__nav" aria-label="Site">
   {
     links.map((link) => (

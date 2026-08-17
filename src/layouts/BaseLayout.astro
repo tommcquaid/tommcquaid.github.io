@@ -5,14 +5,12 @@ import SiteHeader from '../components/SiteHeader.astro';
 interface Props {
   title: string;
   description?: string;
-  hideNav?: boolean;
   current?: 'work' | 'about' | 'writing' | 'resume';
 }
 
 const {
   title,
   description = 'Tom McQuaid — Product Design Leader',
-  hideNav = false,
   current,
 } = Astro.props;
 ---
@@ -27,13 +25,9 @@ const {
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    {
-      !hideNav && (
-        <header class="site-header">
-          <SiteHeader current={current} />
-        </header>
-      )
-    }
+    <header class="site-header">
+      <SiteHeader current={current} />
+    </header>
     <main id="main">
       <slot />
     </main>
