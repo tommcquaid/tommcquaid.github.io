@@ -24,6 +24,18 @@
   --color-bg: #fff;
   --color-border: #e5e5e5;
 
+  /* Surface tokens — placeholder palette for scroll visualization */
+  --surface-white: #ffffff;
+  --surface-sand: #f5f0e8;
+  --surface-stone: #e8e4dc;
+  --surface-mist: #e4eef5;
+  --surface-sage: #e8f0e8;
+  --surface-slate: #dfe3e8;
+  --surface-cream: #faf6ef;
+  --surface-blush: #f5e8e8;
+  --surface-sky: #e0ecf5;
+  --surface-ink: #1a1a1a;
+
   /* Spacing */
   --space-sm: 1rem;
   --space-md: 2rem;

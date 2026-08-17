@@ -6,10 +6,10 @@ import type { metricBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof metricBlock>;
 interface Props extends Block {}
 
-const { items } = Astro.props;
+const { items, background } = Astro.props;
 ---
 
-<Card variant="metric" label="Outcomes">
+<Card variant="metric" label="Outcomes" background={background}>
   <div class="card__metrics">
     {
       items.map((item) => (

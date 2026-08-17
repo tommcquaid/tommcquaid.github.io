@@ -7,10 +7,10 @@ import type { comparisonBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof comparisonBlock>;
 interface Props extends Block {}
 
-const { before, after } = Astro.props;
+const { before, after, background } = Astro.props;
 ---
 
-<Card variant="comparison" label="Comparison">
+<Card variant="comparison" label="Comparison" background={background}>
   <div class="card__compare">
     <figure class="card__compare-item">
       {before.label && <p class="card__label">{before.label}</p>}

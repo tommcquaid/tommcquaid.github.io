@@ -6,10 +6,10 @@ import type { narrativeBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof narrativeBlock>;
 interface Props extends Block {}
 
-const { title, paragraphs } = Astro.props;
+const { title, paragraphs, background } = Astro.props;
 ---
 
-<Card variant="narrative" label={title}>
+<Card variant="narrative" label={title} background={background}>
   <div class="card__inner">
     <h2 class="card__title">{title}</h2>
     <div class="card__text">

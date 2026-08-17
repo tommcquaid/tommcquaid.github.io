@@ -1,15 +1,19 @@
 ---
+import type { SurfaceToken } from '../../schemas/blocks';
+
 interface Props {
   variant: string;
   label?: string;
   class?: string;
+  background?: SurfaceToken;
 }
 
-const { variant, label, class: className } = Astro.props;
+const { variant, label, class: className, background } = Astro.props;
 ---
 
 <section
   class:list={['card', `card--${variant}`, className]}
+  data-surface={background}
   aria-label={label}
 >
   <slot />

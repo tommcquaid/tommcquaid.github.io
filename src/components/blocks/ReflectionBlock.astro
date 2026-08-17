@@ -7,10 +7,10 @@ import type { reflectionBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof reflectionBlock>;
 interface Props extends Block {}
 
-const { title, paragraphs, image, nav } = Astro.props;
+const { title, paragraphs, image, nav, background } = Astro.props;
 ---
 
-<Card variant="closing" label="Reflection">
+<Card variant="closing" label="Reflection" background={background}>
   <div class="card__inner">
     <h2 class="card__title">{title}</h2>
     <div class="card__text">

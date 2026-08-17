@@ -1,0 +1,39 @@
+/*
+ * Surface backgrounds
+ *
+ * Set `background: sand` (etc.) in content to apply a token.
+ * Update token values in tokens.css when the palette is finalized.
+ */
+
+.card[data-surface='white']  { background-color: var(--surface-white); }
+.card[data-surface='sand']   { background-color: var(--surface-sand); }
+.card[data-surface='stone']  { background-color: var(--surface-stone); }
+.card[data-surface='mist']   { background-color: var(--surface-mist); }
+.card[data-surface='sage']   { background-color: var(--surface-sage); }
+.card[data-surface='slate']  { background-color: var(--surface-slate); }
+.card[data-surface='cream']  { background-color: var(--surface-cream); }
+.card[data-surface='blush']  { background-color: var(--surface-blush); }
+.card[data-surface='sky']    { background-color: var(--surface-sky); }
+
+/* Dark surface — invert text within the card */
+.card[data-surface='ink'] {
+  background-color: var(--surface-ink);
+  color: #fff;
+}
+
+.card[data-surface='ink'] .card__subtitle,
+.card[data-surface='ink'] .card__meta,
+.card[data-surface='ink'] .card__label,
+.card[data-surface='ink'] .card__cite,
+.card[data-surface='ink'] .card__step-label,
+.card[data-surface='ink'] .card__metric-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card[data-surface='ink'] .card__nav a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card[data-surface='ink'] .card__nav a:hover {
+  color: #fff;
+}

@@ -7,13 +7,14 @@ import type { processBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof processBlock>;
 interface Props extends Block {}
 
-const { steps, vertical } = Astro.props;
+const { steps, vertical, background } = Astro.props;
 ---
 
 <Card
   variant="process"
   class={vertical ? 'card--process-vertical' : undefined}
   label="Process"
+  background={background}
 >
   <div class="card__process">
     {

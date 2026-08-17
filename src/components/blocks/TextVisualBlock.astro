@@ -7,13 +7,14 @@ import type { textVisualBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof textVisualBlock>;
 interface Props extends Block {}
 
-const { title, paragraphs, image, reverse } = Astro.props;
+const { title, paragraphs, image, reverse, background } = Astro.props;
 ---
 
 <Card
   variant="split"
   class={reverse ? 'card--split-reverse' : undefined}
   label={title ?? 'Text and visual'}
+  background={background}
 >
   <div class="card__split">
     <div class="card__content">

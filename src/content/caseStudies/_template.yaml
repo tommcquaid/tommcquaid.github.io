@@ -8,6 +8,7 @@ draft: true
 
 blocks:
   - type: thesis
+    background: sand
     text: "A single sharp insight."
 
   - type: narrative

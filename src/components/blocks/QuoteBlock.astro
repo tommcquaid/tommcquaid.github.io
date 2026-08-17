@@ -6,10 +6,10 @@ import type { quoteBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof quoteBlock>;
 interface Props extends Block {}
 
-const { quote, attribution } = Astro.props;
+const { quote, attribution, background } = Astro.props;
 ---
 
-<Card variant="quote" label="Quote">
+<Card variant="quote" label="Quote" background={background}>
   <figure>
     <blockquote class="card__quote">
       <p>{quote}</p>

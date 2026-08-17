@@ -7,10 +7,10 @@ import type { containedVisualBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof containedVisualBlock>;
 interface Props extends Block {}
 
-const { image, caption } = Astro.props;
+const { image, caption, background } = Astro.props;
 ---
 
-<Card variant="contained" label={caption ?? image.alt}>
+<Card variant="contained" label={caption ?? image.alt} background={background}>
   <figure class="card__media">
     <Visual {...image} />
     {caption && (

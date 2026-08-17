@@ -6,10 +6,10 @@ import type { thesisBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof thesisBlock>;
 interface Props extends Block {}
 
-const { title, text } = Astro.props;
+const { title, text, background } = Astro.props;
 ---
 
-<Card variant="statement" label="Thesis">
+<Card variant="statement" label="Thesis" background={background}>
   <blockquote class="card__statement">
     {title && <p>{title}</p>}
     <p>{text}</p>

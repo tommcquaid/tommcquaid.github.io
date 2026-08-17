@@ -7,10 +7,10 @@ import type { visualGridBlock } from '../../schemas/blocks';
 type Block = z.infer<typeof visualGridBlock>;
 interface Props extends Block {}
 
-const { columns, images } = Astro.props;
+const { columns, images, background } = Astro.props;
 ---
 
-<Card variant="grid" label={`Visual grid (${columns}-up)`}>
+<Card variant="grid" label={`Visual grid (${columns}-up)`} background={background}>
   <div class={`card__grid card__grid--${columns}`}>
     {
       images.map((image) => (

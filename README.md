@@ -61,6 +61,23 @@ No layout code, CSS, or component changes required.
 
 The **hero card** is auto-generated from top-level metadata (`title`, `subtitle`, `label`, `role`, `team`, `cover`, etc.) — not a block.
 
+### Surface backgrounds
+
+Every block (and the hero via top-level metadata) accepts an optional `background` token:
+
+```yaml
+background: sand   # hero
+blocks:
+  - type: narrative
+    background: cream
+    title: "The problem"
+    paragraphs: [...]
+```
+
+Available tokens: `white` · `sand` · `stone` · `mist` · `sage` · `slate` · `cream` · `blush` · `sky` · `ink`
+
+Token values live in `src/styles/tokens.css` — update once to change the palette globally. Dark token `ink` auto-inverts text within the card.
+
 ### Schema validation
 
 Block shapes are validated at build time via Zod in `src/schemas/blocks.ts`. Invalid content fails the build with a clear error — no silent typos.
