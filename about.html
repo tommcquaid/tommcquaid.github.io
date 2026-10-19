@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Tom McQuaid — Product Design</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-logo" href="index.html" aria-label="Tom home">Tom McQuaid</a>
+
+            <div class="header-right">
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <a href="index.html">Work</a>
+                    <a href="about.html" aria-current="page">About</a>
+                    <a class="contact-nav-link" href="https://www.linkedin.com/in/tom-mcquaid/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Contact (opens in a new tab)">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page">
+        <article class="text-column section-stack">
+            <header class="flow">
+                <h1>Hi, I’m Tom &#128075;</h1>
+                <p class="text-sans">Over the past 13 years, I’ve worked across
+                    financial services, consulting, education, and
+                    nonprofits, designing products and helping the teams behind them do better work. </p>
+
+                <p>My background
+                    spans graphic design, front-end development, research, and product strategy, so I’m as interested
+                    in the details of an interface as I am in the bigger systems that shape it.</p>
+                <p>
+                    At heart, I’m a people person who thinks like a builder. I believe good design goes beyond what
+                    users see on a screen. It’s also about how teams work together, how stories get told, how decisions
+                    get made, and how
+                    ideas become real.
+                </p>
+                <p>
+                    Today, I lead product design at Northwestern Mutual, where my team shapes the tools financial
+                    advisors use to manage their clients and businesses. I also teach UX/UI design at the University
+                    of Pennsylvania. I'm based in Brooklyn and live with my partner Mike and our black cat Mowgli. When
+                    in doubt, you can
+                    probably find me at a movie theater.
+                </p>
+                <figure class="image-breakout case-study-image about-image">
+                    <img src="images/tom.webp" alt="Tom McQuaid" loading="lazy" decoding="async" />
+                </figure>
+
+
+                <section class="flow" aria-labelledby="work-experience-heading">
+                    <h3 id="work-experience-heading">Work Experience</h3>
+                    <div class="experience-grid">
+                        <article class="card experience-card">
+                            <h4>Associate Director, Product Design</h4>
+                            <p><strong>Northwestern Mutual</strong> · 2022–Present</p>
+                            <p>Leading product design strategy and a team of seven designers across complex financial
+                                software. Promoted from Design Manager in 2026.</p>
+                        </article>
+                        <article class="card experience-card">
+                            <h4>Adjunct Lecturer, UX/UI Design</h4>
+                            <p><strong>University of Pennsylvania</strong> · 2022–2026</p>
+                            <p>Co-created and taught a studio-based UX/UI design course for more than 200 students.</p>
+                        </article>
+                        <article class="card experience-card">
+                            <h4>Lead Design Consultant</h4>
+                            <p><strong>Think Company</strong> · 2021–2022</p>
+                            <p>Led multidisciplinary teams delivering product strategy and digital experiences for
+                                Fortune 500 clients.</p>
+                        </article>
+                        <article class="card experience-card">
+                            <h4>Senior Product Designer</h4>
+                            <p><strong>The College Board</strong> · 2019–2021</p>
+                            <p>Designed digital learning experiences supporting teachers and students during the shift
+                                to remote education.</p>
+                        </article>
+                        <article class="card experience-card">
+                            <h4>UX/UI Designer</h4>
+                            <p><strong>Digitas Health, Happy Cog &amp; Character Lab</strong> · 2013–2019</p>
+                            <p>Designed digital products across healthcare, education, consulting, and nonprofit
+                                organizations.</p>
+                        </article>
+                    </div>
+                </section>
+
+            </header>
+        </article>
+    </main>
+
+    <!-- Header scroll behavior -->
+    <script>
+        const header = document.querySelector(".site-header");
+        let lastScrollY = window.scrollY;
+
+        function updateHeader() {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                header.classList.add("is-hidden");
+            } else {
+                header.classList.remove("is-hidden");
+            }
+
+            lastScrollY = currentScrollY;
+        }
+
+        window.addEventListener("scroll", updateHeader, { passive: true });
+    </script>
+</body>
+
+</html>

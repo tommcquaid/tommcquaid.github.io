@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connecting Client Insights to Action — Tom McQuaid</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-logo" href="index.html" aria-label="Tom home">
+                Tom McQuaid
+            </a>
+
+            <div class="header-right">
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <a href="index.html" aria-current="page">Work</a>
+                    <a href="about.html">About</a>
+                    <a class="contact-nav-link" href="https://www.linkedin.com/in/tom-mcquaid/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Contact (opens in a new tab)">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page">
+        <article class="text-column section-stack">
+
+            <!-- Introduction -->
+            <header class="flow">
+                <h1>Connecting Client Insights to Action</h1>
+                <p class="text-sans">
+                    Led the design of a new experience for Northwestern Mutual’s advisor platform, helping financial
+                    advisors identify client opportunities, evaluate recommendations, and take action.
+                </p>
+
+                <figure class="image-breakout case-study-image">
+                    <img src="images/cs2.webp" alt="Book Insights experience" width="1200" height="800"
+                        decoding="async" />
+                </figure>
+            </header>
+
+            <!-- Challenge -->
+            <section class="case-study-section flow">
+                <div class="flow-tight">
+                    <h2>The challenge</h2>
+                    <h3>Making it easier to know where to focus</h3>
+                </div>
+                <p>
+                    Financial advisors manage relationships with hundreds, sometimes thousands, of clients. Keeping
+                    track of who needs attention, where opportunities exist, and what to do next is a significant part
+                    of running their businesses.
+                </p>
+                <p>
+                    At Northwestern Mutual, much of that work happened across disconnected tools. Advisors relied on
+                    client lists, reports, CRM systems, and spreadsheets to piece together a picture of their book of
+                    business. Meanwhile, valuable information about potential client needs was available through
+                    predictive models and other internal systems, but wasn’t always easy to find or act on.
+                </p>
+                <p>
+                    Even the term <em>Book Management</em> meant different things to different people. Depending on who
+                    you asked, it could refer to managing client relationships, tracking business performance, finding
+                    sales opportunities, or planning outreach.
+                </p>
+                <p>
+                    Rather than trying to fit all of those activities into a single definition, we started by
+                    understanding what advisors were actually trying to accomplish.
+                </p>
+                <figure class="image-breakout case-study-image">
+                    <div class="case-study-image__placeholder" role="img"
+                        aria-label="Existing Book Management tools, client lists, and reports">
+                        <span>Fragmented Book Management tools</span>
+                    </div>
+                    <figcaption>Disconnected tools, client lists, and reports formed the fragmented starting point.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <!-- Research -->
+            <section class="case-study-section flow">
+                <div class="flow-tight">
+                    <h2>Understanding the work</h2>
+                    <h3>More information wasn’t the answer</h3>
+                </div>
+                <p>
+                    Our research revealed that advisors weren’t simply looking for a better way to see their clients.
+                    They were trying to decide where to spend their time.
+                </p>
+                <p>
+                    They wanted to identify meaningful opportunities, understand which clients were involved, and
+                    determine whether an action made sense. From there, they needed to coordinate outreach, create
+                    tasks, and keep track of what happened.
+                </p>
+                <p>
+                    Much of this required moving between systems or maintaining their own spreadsheets. In foundational
+                    interviews, nearly all 11 participants used Excel for some part of Book Management, often because
+                    it gave them more control over how information was combined and organized.
+                </p>
+                <p>
+                    In a study exploring different design concepts for identifying client opportunities, participants
+                    preferred having relevant opportunities surfaced for them over building everything from scratch
+                    using combinations of filters. But they still wanted the flexibility to investigate and refine
+                    those recommendations.
+                </p>
+                <p>
+                    Notably, all seven participants responded positively to algorithmic recommendations, but said
+                    understanding the data that fed those algorithms was imperative. That tension became important to
+                    our approach: the system could help advisors identify
+                    opportunities, but it couldn’t replace their knowledge of the client.
+                </p>
+
+                <figure class="image-breakout case-study-image">
+                    <div class="case-study-image__placeholder" role="img"
+                        aria-label="Research findings and existing advisor workflow">
+                        <span>Research and current workflow</span>
+                    </div>
+                    <figcaption>Where advisors moved between systems, manually refined lists, and initiated follow-up.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <!-- Shared Pattern -->
+            <section class="case-study-section flow">
+                <div class="flow-tight">
+                    <h2>Finding a pattern we could build around</h2>
+                </div>
+                <p>
+                    At the same time, several teams were exploring related ideas: predictive purchase opportunities,
+                    marketing campaigns, client segmentation, and recurring service plans.
+                </p>
+                <p>
+                    Each had its own requirements, but I saw a common interaction underneath them. Something identifies
+                    a reason to engage with a client. The advisor evaluates that information, determines who needs
+                    attention, and takes an appropriate action.
+                </p>
+                <section class="card">
+                    <p>Signal <span aria-hidden="true">→</span> Insight <span aria-hidden="true">→</span> Clients
+                        <span aria-hidden="true">→</span> Action
+                    </p>
+                </section>
+                <p>
+                    A signal might come from a predictive model, an upcoming policy event, or an advisor-defined
+                    service plan. The source could change, but the underlying workflow remained largely the same.
+                </p>
+                <p>
+                    This gave us a way to connect the initiatives without designing a separate experience for every
+                    type of opportunity. It also helped establish a clearer direction for my team. Christine, one of the
+                    designers I led, focused
+                    on the Book Insights experience and the client-list interactions that supported it. Allison, another
+                    designer,
+                    explored how automatic Outreach Plans could help advisors establish recurring engagement strategies
+                    and
+                    eventually contribute to the same experience.
+                </p>
+                <p>
+                    My role was to establish the overall approach, guide the interaction design, and make sure the
+                    individual features worked as parts of a coherent product. We also partnered with Data Science to
+                    better understand the propensity models and their limitations, and worked with User Research to
+                    continuously
+                    test directions with advisors and their teams.
+                </p>
+                <figure class="image-breakout case-study-image">
+                    <div class="case-study-image__placeholder" role="img"
+                        aria-label="Signal-to-action framework connecting different opportunity sources to one shared interaction">
+                        <span>Signal → Insight → Clients → Action</span>
+                    </div>
+                    <figcaption>Different opportunity signals converge on a shared interaction pattern.</figcaption>
+                </figure>
+            </section>
+
+            <!-- Design -->
+            <section class="case-study-section flow">
+                <div class="flow-tight">
+                    <h2>Designing the path from insight to action</h2>
+                </div>
+                <p>We wanted to make it easier for advisors to move from recognizing an opportunity to doing something
+                    useful with it. That meant thinking beyond the dashboard itself.</p>
+
+                <div class="flow">
+                    <h3>Start with opportunities, not another list to search</h3>
+                    <p>
+                        Advisors already had access to plenty of client data. What they lacked was an easy way to
+                        recognize which information deserved their attention.
+                    </p>
+                    <p>
+                        We designed Book Insights to surface opportunities proactively, including clients with a high
+                        likelihood of purchasing certain products and opportunities to deepen existing relationships.
+                    </p>
+                    <p>
+                        Rather than asking advisors to construct every possible combination of filters, the dashboard
+                        provides meaningful starting points.
+                    </p>
+                    <p>
+                        This direction was reinforced by research comparing two approaches to opportunity discovery.
+                        Participants favored the version with predefined opportunity categories, which made it easier
+                        to understand where to begin.
+                    </p>
+                    <figure class="image-breakout case-study-image">
+                        <div class="case-study-image__placeholder" role="img"
+                            aria-label="Early dashboard explorations and final Book Insights dashboard">
+                            <span>Book Insights dashboard</span>
+                        </div>
+                        <figcaption>Dashboard explorations showing how opportunity categories evolved.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="flow">
+                    <h3>Give advisors room to apply their judgment</h3>
+                    <p>
+                        A recommendation is only useful if an advisor can understand what it means for the clients
+                        involved.
+                    </p>
+                    <p>
+                        For example, the dashboard might identify 17 clients with a high propensity to purchase a
+                        particular product. But an advisor may already know that some of those clients recently
+                        discussed the product, have different priorities, or aren’t appropriate candidates for
+                        outreach.
+                    </p>
+                    <p>
+                        We connected each opportunity to a relevant, filtered client list so advisors could
+                        investigate the recommendation before deciding what to do.
+                    </p>
+                    <p>
+                        This was an important distinction. We weren’t trying to automate the advisor’s decision. We
+                        were trying to make that decision easier to reach.
+                    </p>
+                    <p>
+                        Working with Data Science also helped us understand what the predictive model could and
+                        couldn’t tell us. That mattered when deciding how to present likelihood information without
+                        suggesting more certainty than the underlying data supported.
+                    </p>
+                    <figure class="image-breakout case-study-image">
+                        <div class="case-study-image__placeholder" role="img"
+                            aria-label="Wireframes showing an advisor selecting an opportunity and reviewing a filtered client list">
+                            <span>Opportunity and filtered client list</span>
+                        </div>
+                        <figcaption>Wireframes showing the information and controls advisors used to evaluate an
+                            opportunity.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="flow">
+                    <h3>Make the next step feel like part of the same experience</h3>
+                    <p>Finding the right clients was only part of the problem.</p>
+                    <p>
+                        Research showed that advisors and their teams often generated a list in one place, refined it
+                        somewhere else, and then moved into another workflow to initiate outreach.
+                    </p>
+                    <p>We wanted to reduce that separation.</p>
+                    <p>
+                        From the relevant client list, advisors could move into existing task and follow-up workflows
+                        rather than starting over in a different part of the platform.
+                    </p>
+                    <p>
+                        Keeping those capabilities connected was important. We weren’t introducing a new way to manage
+                        every aspect of client engagement. We were making it easier to begin work using the tools
+                        advisors already knew.
+                    </p>
+                    <figure class="image-breakout case-study-image">
+                        <div class="case-study-image__placeholder" role="img"
+                            aria-label="Step-by-step workflow from a filtered client list into task creation or another supported action">
+                            <span>Client list to follow-up action</span>
+                        </div>
+                        <figcaption>Interface states showing how advisors moved from a filtered client list into task
+                            creation.</figcaption>
+                    </figure>
+                </div>
+
+                <p>
+                    Together, these interactions created a more complete experience: discover an opportunity,
+                    understand the clients involved, and take action.
+                </p>
+            </section>
+
+            <!-- Product and Outcomes -->
+            <section class="case-study-section flow">
+                <div class="flow-tight">
+                    <h2>From concept to product</h2>
+                </div>
+                <p>
+                    The team delivered Book Insights as a new experience within Advisor Desktop, bringing predictive
+                    recommendations, product opportunities, and suggested next actions into one place.
+                </p>
+                <p>
+                    Before launch, we tested the dashboard with advisors and team members. The experience received a
+                    System Usability Scale score of 77.1, placing it around the 80th percentile, with an average
+                    satisfaction rating of 8.7 out of 10.
+                </p>
+                <p>
+                    Those results came from a small usability study of six participants, but they gave us encouraging
+                    evidence that the experience was understandable and useful.
+                </p>
+                <figure class="image-breakout case-study-image">
+                    <div class="case-study-image__placeholder" role="img"
+                        aria-label="Final Book Insights product screenshots and usability results">
+                        <span>Book Insights launch and usability results</span>
+                    </div>
+                    <figcaption>Final product experience alongside results from the six-participant usability study.
+                    </figcaption>
+                </figure>
+                <p>
+                    The launch also gave us a foundation for future work. Rather than building a new destination for
+                    every initiative, other teams could contribute opportunities to a shared experience.
+                </p>
+                <p>
+                    Marketing and Sales Enablement are already planning to bring additional client-engagement
+                    opportunities into Book Insights. The Service Plans experience we designed remains on the roadmap,
+                    with delivery currently planned for 2027.
+                </p>
+                <p>The underlying pattern gives us a way to extend the product while keeping the experience familiar.
+                </p>
+            </section>
+
+            <!-- Post-launch Learning -->
+            <section class="case-study-section flow">
+                <div class="flow-tight">
+                    <h2>What we learned after launch</h2>
+                </div>
+                <p>
+                    The response from advisors who used Book Insights was encouraging, and we saw usage increase. But
+                    we also learned that creating a useful experience wasn’t enough to ensure people would discover it.
+                </p>
+                <p>
+                    The dashboard was relatively difficult to find within the existing navigation. Initial
+                    communication also relied heavily on a temporary announcement, which meant advisors who missed or
+                    dismissed it had limited opportunities to learn about the new capability.
+                </p>
+                <p>
+                    Subsequent research reinforced that discoverability remained a challenge, even among people who had
+                    visited related parts of Advisor Desktop.
+                </p>
+                <p>
+                    We’re continuing to work through how to make the experience more visible and help advisors
+                    understand where it fits into their day-to-day work.
+                </p>
+                <p>For me, the project reinforced two things.</p>
+                <ol>
+                    <li>
+                        The most useful design direction often comes from recognizing a common need across problems
+                        that initially appear unrelated. Finding that pattern helped us bring several initiatives
+                        together around one experience.
+                    </li>
+                    <li>
+                        Introducing a new product means introducing a new behavior. We had designed a better way to
+                        move from client insight to action, but helping advisors discover and adopt that way of working
+                        needed just as much attention as the interactions themselves.
+                    </li>
+                </ol>
+            </section>
+
+        </article>
+    </main>
+
+    <!-- Header scroll behavior -->
+    <script>
+        const header = document.querySelector(".site-header");
+        let lastScrollY = window.scrollY;
+
+        function updateHeader() {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                header.classList.add("is-hidden");
+            } else {
+                header.classList.remove("is-hidden");
+            }
+
+            lastScrollY = currentScrollY;
+        }
+
+        window.addEventListener("scroll", updateHeader, { passive: true });
+    </script>
+
+</body>
+
+</html>

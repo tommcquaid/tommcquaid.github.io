@@ -1,0 +1,771 @@
+/* ========================================
+   DESIGN TOKENS
+======================================== */
+
+:root {
+  /* Typography */
+  --font-sans: "Soehne", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Tiempos", Georgia, "Times New Roman", serif;
+
+  /* Color */
+  --color-background: #fff;
+  --color-text: #404040;
+  --color-heading: #222;
+  --color-focus: #000;
+  --color-border: #ebebeb;
+  --color-placeholder: #eaf0f8;
+
+  /* Layout */
+  --width-text: 550px;
+  --width-media: 1000px;
+  --page-gutter: 1.5rem;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Shape */
+  --radius-card: 0.75rem;
+
+  /* Layering */
+  --z-header: 20;
+
+  /* Effects */
+  --shadow-card:
+    0 0 0 max(1px, 0.05em) oklch(0 0 0 / 0.0625),
+    0 0.2em 1.6em -0.5em oklch(0 0 0 / 0.04),
+    0 0.3em 2em -0.6em oklch(0 0 0 / 0.04),
+    0 0.3em 0.8em -0.7em oklch(0 0 0 / 0.04),
+    0 0.5em 1.2em -0.9em oklch(0 0 0 / 0.04),
+    0 0.7em 1.6em -1.1em oklch(0 0 0 / 0.04);
+
+  --shadow-header:
+    0 0.25em 1.2em -0.6em oklch(0 0 0 / 0.05),
+    0 0.5em 1.8em -1em oklch(0 0 0 / 0.04);
+}
+
+/* ========================================
+   FONTS
+======================================== */
+
+@font-face {
+  font-family: "Soehne";
+  src: url("./fonts/soehne-buch.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Soehne";
+  src: url("./fonts/soehne-buch-kursiv.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Soehne";
+  src: url("./fonts/soehne-halbfett.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Soehne";
+  src: url("./fonts/soehne-halbfett-kursiv.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos";
+  src: url("./fonts/tiempos-text-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos";
+  src: url("./fonts/tiempos-text-regular-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-background);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+figure,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+h3 {
+  line-height: 1.3;
+}
+
+/* Font utilities */
+
+.text-sans {
+  font-family: var(--font-sans);
+}
+
+.text-serif {
+  font-family: var(--font-serif);
+}
+
+/* Links */
+
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.text-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ========================================
+   LAYOUT PRIMITIVES
+======================================== */
+
+/*
+  These classes control vertical spacing.
+
+  Apply them to parent containers rather
+  than adding margins to individual elements.
+*/
+
+/* Standard content spacing: 16px */
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Major case-study sections: 48px */
+
+.section-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* Major page sections: 64px */
+
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+/* Groups of cards: 16px */
+
+.card-stack {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+/* Optional tighter spacing: 8px */
+
+.flow-tight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Optional wider spacing: 24px */
+
+.flow-loose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ========================================
+   CONTENT SPACING
+======================================== */
+
+/*
+  Standard vertical rhythm is controlled
+  by parent layout utilities.
+
+  Visual elements receive additional space
+  to distinguish them from body text.
+*/
+
+/* Extra breathing room around visual elements */
+
+.flow > :is(.card, .card-stack, .image-breakout) {
+  margin-block: var(--space-sm);
+}
+
+/* Avoid unnecessary spacing at section boundaries */
+
+.flow > :is(.card, .card-stack, .image-breakout):first-child {
+  margin-top: 0;
+}
+
+.flow > :is(.card, .card-stack, .image-breakout):last-child {
+  margin-bottom: 0;
+}
+
+/* Keep consecutive images visually grouped */
+
+.flow > .image-breakout + .image-breakout {
+  margin-top: 0;
+}
+
+/* Additional space before nested content groups */
+
+.flow > .flow {
+  margin-top: var(--space-sm);
+}
+
+/* Comfortable spacing between list items */
+
+li + li {
+  margin-top: var(--space-sm);
+}
+
+/* ========================================
+   PAGE LAYOUT
+======================================== */
+
+.page {
+  padding: var(--space-2xl) var(--page-gutter);
+}
+
+.text-column {
+  width: min(100%, var(--width-text));
+  margin-inline: auto;
+}
+
+.media-column {
+  width: min(100%, var(--width-media));
+  margin-inline: auto;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+
+  padding-inline: var(--page-gutter);
+
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-header);
+  background: var(--color-background);
+
+  font-family: var(--font-sans);
+  line-height: 1.2;
+
+  transition: transform 240ms ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
+.site-header__inner {
+  width: min(100%, var(--width-media));
+  margin-inline: auto;
+  padding-block: var(--space-sm);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.site-logo {
+  flex: 0 0 auto;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-left: auto;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.site-nav a,
+.header-icon {
+  font-weight: 400;
+}
+
+.site-nav a {
+  white-space: nowrap;
+}
+
+.site-nav .contact-nav-link {
+  display: inline;
+}
+
+.site-nav [aria-current="page"] {
+  font-weight: 600;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.9rem;
+  height: 1.9rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  color: var(--color-heading);
+  background: var(--color-background);
+
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.header-icon:hover,
+.header-icon:focus-visible {
+  border-color: var(--color-text);
+}
+
+.header-icon i {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ========================================
+   BREAKOUT MEDIA
+======================================== */
+
+/*
+  Allows images inside a narrow text column
+  to expand to the wider media width.
+
+  Vertical spacing is controlled by the
+  parent .flow container.
+*/
+
+.image-breakout {
+  width: min(var(--width-media), calc(100vw - (var(--page-gutter) * 2)));
+
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.image-breakout img {
+  width: 100%;
+  height: auto;
+}
+
+.about-image img {
+  border-radius: var(--radius-card);
+}
+
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ========================================
+   SELECTED WORK
+======================================== */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.work-card {
+  display: block;
+  overflow: hidden;
+
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  background: var(--color-background);
+}
+
+.work-card__media {
+  position: relative;
+}
+
+.work-card__media img {
+  width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.work-card--coming-soon .work-card__media::after {
+  position: absolute;
+  inset: 0;
+
+  background: rgb(0 0 0 / 55%);
+  content: "";
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.work-card:not(.work-card--coming-soon) .work-card__media::after {
+  position: absolute;
+  inset: 0;
+
+  background: rgb(255 255 255 / 20%);
+  content: "";
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.work-card:not(.work-card--coming-soon):hover .work-card__media::after,
+.work-card:not(.work-card--coming-soon):focus-visible .work-card__media::after {
+  opacity: 1;
+}
+
+.work-card__coming-soon {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.work-card--coming-soon:hover .work-card__media::after,
+.work-card--coming-soon:hover .work-card__coming-soon {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .work-card--coming-soon .work-card__media::after,
+  .work-card--coming-soon .work-card__coming-soon {
+    opacity: 1;
+  }
+}
+
+.work-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+
+  padding: var(--space-lg);
+}
+
+.work-card:not(.work-card--coming-soon):hover h3,
+.work-card:not(.work-card--coming-soon):focus-visible h3 {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ========================================
+   CASE STUDIES
+======================================== */
+
+/* Placeholder media */
+
+.case-study-image__placeholder {
+  aspect-ratio: 16 / 9;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--color-placeholder);
+
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* Image captions */
+
+.case-study-image {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.case-study-image figcaption {
+  font-size: 0.9rem;
+}
+
+/* Case study metadata */
+
+.case-study-meta dl {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--space-xs) var(--space-sm);
+}
+
+.case-study-meta dl div {
+  display: contents;
+}
+
+.case-study-meta dt {
+  font-weight: 600;
+}
+
+.case-study-meta dd {
+  margin: 0;
+}
+
+/* Narrative lists */
+
+.advisor-narratives li + li {
+  margin-top: var(--space-sm);
+}
+
+/* ========================================
+   GENERIC CARDS
+======================================== */
+
+.card {
+  padding: var(--space-lg);
+
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  background: var(--color-background);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.experience-card p:last-child {
+  font-size: 0.9rem;
+}
+
+/*
+  Cards control internal spacing.
+  Their parent controls external spacing.
+*/
+
+/* ========================================
+   CURRENTLY
+======================================== */
+
+.current-role {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.current-role__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.current-role__organization {
+  font-style: italic;
+}
+
+.current-section > .current-role + .current-role {
+  margin-top: var(--space-md);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+  /* Page */
+
+  .page {
+    padding-block: var(--space-xl);
+  }
+
+  /* Major page sections */
+
+  .page-stack {
+    gap: var(--space-xl);
+  }
+
+  /* Work grid */
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Header */
+
+  .site-header__inner {
+    gap: var(--space-xs);
+  }
+
+  .header-right {
+    gap: var(--space-sm);
+  }
+
+  .site-nav {
+    gap: 0.85rem;
+  }
+
+  .header-actions {
+    gap: 0.45rem;
+  }
+
+  .header-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .header-icon {
+    transition: none;
+  }
+}

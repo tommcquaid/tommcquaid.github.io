@@ -3,92 +3,165 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Tom McQuaid — Product Design Manager and Educator. Building systems, tools, and teams that make sense." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/typography.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <title>Tom McQuaid</title>
+    <title>Tom McQuaid — Product Design</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-logo" href="index.html" aria-label="Tom home">Tom McQuaid</a>
 
-    <!-- Intro -->
-    <section class="intro">
-        <img src="img/tom.png" alt="Headshot of Tom McQuaid" class="avatar" />
-        <div class="bio">
-            <h1>Tom McQuaid</h1>
-            <h2>Product Design Leader + Educator</h2>
+            <div class="header-right">
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <a href="index.html" aria-current="page">Work</a>
+                    <a href="about.html">About</a>
+                    <a class="contact-nav-link" href="https://www.linkedin.com/in/tom-mcquaid/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Contact (opens in a new tab)">Contact</a>
+                </nav>
+
+            </div>
         </div>
-    </section>
+    </header>
 
-    <!-- About -->
-    <section class="about">
-        <h3>About</h3>
-        <p>
-            Product design leader building products, systems, and teams that make sense. Over the past 13+ years, I’ve
-            led design across finance, tech, education, and nonprofits, crafting digital experiences that work for real
-            people with real-world constraints.
-        </p>
-    </section>
+    <main class="page page-stack">
 
-    <!-- Current Work -->
-    <section class="work">
-        <h3>Current Work</h3>
+        <!-- Intro -->
+        <section class="text-column intro-section flow">
+            <h1>Designing complex products and leading the teams that make them better.</h1>
 
-        <article class="year-block">
-            <div class="years">
-                <p>Since 2022</p>
+            <p>
+                For 13+ years, I’ve helped organizations turn complicated problems into useful, intuitive digital
+                experiences. My work spans hands-on product design, UX strategy, and building design teams that can
+                deliver
+                great work at scale.
+            </p>
+        </section>
+
+        <!-- Selected Work -->
+        <section class="media-column work-section">
+            <div class="work-grid">
+
+                <a class="work-card" href="case-study-1.html">
+                    <div class="work-card__media">
+                        <img src="images/cs1.webp" alt="Advisor desktop and mobile product interface concepts"
+                            width="1200" height="800" loading="lazy" decoding="async" draggable="false" />
+                    </div>
+
+                    <div class="work-card__content">
+                        <h3>Setting Experience Direction</h3>
+
+                        <p>
+                            Building a shared vision for a fragmented ecosystem of financial advisor tools.
+                        </p>
+                    </div>
+                </a>
+
+                <a class="work-card" href="case-study-2.html">
+                    <div class="work-card__media">
+                        <div class="work-card__media">
+                            <img src="images/cs2.webp" alt="Advisor desktop and mobile product interface concepts"
+                                width="1200" height="800" loading="lazy" decoding="async" draggable="false" />
+                        </div>
+                    </div>
+
+                    <div class="work-card__content">
+                        <h3>Making Complex Work Simpler</h3>
+
+                        <p>
+                            Redesigning how financial advisors identify opportunities, prioritize clients, and take
+                            action.
+                        </p>
+                    </div>
+                </a>
+
+                <article class="work-card work-card--coming-soon" aria-disabled="true">
+                    <div class="work-card__media">
+                        <img src="images/cs3.webp" alt="Advisor desktop and mobile product interface concepts"
+                            width="1200" height="800" loading="lazy" decoding="async" draggable="false" />
+                        <span class="work-card__coming-soon">Coming soon</span>
+                    </div>
+
+                    <div class="work-card__content">
+                        <h3>Designing for Scale</h3>
+
+                        <p>
+                            Creating a reusable data table system to bring consistency and flexibility to
+                            cross-functional workflows.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="work-card work-card--coming-soon" aria-disabled="true">
+                    <div class="work-card__media">
+                        <img src="images/cs4.webp" alt="Advisor desktop and mobile product interface concepts"
+                            width="1200" height="800" loading="lazy" decoding="async" draggable="false" />
+                        <span class="work-card__coming-soon">Coming soon</span>
+                    </div>
+
+                    <div class="work-card__content">
+                        <h3>Leading Design in the Age of AI</h3>
+
+                        <p>
+                            Helping a design team navigate AI, experiment with new tools, and rethink how they design
+                            and build products.
+                        </p>
+                    </div>
+                </article>
+
             </div>
-            <div>
-                <h3 class="heading">Asst. Director Product Design – Northwestern Mutual</h3>
-                <p class="location">New York, Remote</p>
-                <p class="description">
-                    Leading product design across a portfolio of advisor-facing tools used by more than 6,500
-                    financial advisors nationwide. I manage a multi-level design team and partner with Product, Engineering,
-                    and business leaders to shape product strategy, improve connected experiences across the platform, and
-                    strengthen how design operates within the organization.
-                </p>
-            </div>
-        </article>
+        </section>
 
-        <article class="year-block">
-            <div class="years">
-                <p>Since 2022</p>
-            </div>
-            <div>
-                <h3 class="heading">Lecturer, UX & UI Design – University of Pennsylvania</h3>
-                <p class="location">Philadelphia</p>
+        <!-- Currently -->
+        <section class="text-column current-section flow">
+            <h2>Currently</h2>
+
+            <div class="current-role">
+                <div class="current-role__heading">
+                    <h3>Associate Director, Product Design – Northwestern Mutual</h3>
+                </div>
+
                 <p>
-                    Instructor and curriculum developer for Penn's first studio course in UX/UI design. Students learn
-                    principles of user research and design thinking, interaction design fundamentals, and practical
-                    Figma skills that prepare them for careers in product design and development.
+                    I lead seven designers shaping the tools financial advisors use to manage clients and run their
+                    businesses. My work spans UX strategy, complex workflows, and creating more cohesive experiences
+                    across the platform.
                 </p>
             </div>
-        </article>
-    </section>
 
-    <!-- Education -->
-    <section class="education">
-        <h3>Education</h3>
+            <div class="current-role">
+                <div class="current-role__heading">
+                    <h3>Adjunct Design Lecturer – University of Pennsylvaia </h3>
+                </div>
 
-        <article class="year-block">
-            <div class="years">
-                <p>2009 – 2013</p>
+                <p>
+                    I developed and teach Penn’s first studio-based UX/UI course, helping 200+ students build practical
+                    skills and develop design judgment.
+                </p>
             </div>
-            <div>
-                <h3 class="heading">BA, Design – University of Pennsylvania</h3>
-                <p class="location">Philadelphia</p>
-            </div>
-        </article>
-    </section>
+        </section>
 
-    <script type="module" src="js/main.js"></script>
+    </main>
+
+    <script>
+        const header = document.querySelector(".site-header");
+        let lastScrollY = window.scrollY;
+
+        function updateHeader() {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                header.classList.add("is-hidden");
+            } else {
+                header.classList.remove("is-hidden");
+            }
+
+            lastScrollY = currentScrollY;
+        }
+
+        window.addEventListener("scroll", updateHeader, { passive: true });
+    </script>
 </body>
 
 </html>
