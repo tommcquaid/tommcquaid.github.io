@@ -1,0 +1,12 @@
+{
+    "name": "tommcquaid-portfolio",
+    "private": true,
+    "scripts": {
+        "images:optimize": "node scripts/optimize-images.js",
+        "images:watch": "node scripts/optimize-images.js --watch"
+    },
+    "devDependencies": {
+        "chokidar": "^4.0.3",
+        "sharp": "^0.35.5"
+    }
+}

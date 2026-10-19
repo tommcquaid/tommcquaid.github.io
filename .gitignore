@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+images/source/**
+!images/source/.gitkeep
+images/optimized/.optimization-cache.json
