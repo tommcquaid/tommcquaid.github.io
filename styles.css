@@ -115,6 +115,15 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+html.has-image-fade img {
+  opacity: 0;
+  transition: opacity 450ms ease;
+}
+
+html.has-image-fade img.is-loaded {
+  opacity: 1;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -765,7 +774,8 @@ li + li {
 
 @media (prefers-reduced-motion: reduce) {
   .site-header,
-  .header-icon {
+  .header-icon,
+  html.has-image-fade img {
     transition: none;
   }
 }
