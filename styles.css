@@ -437,6 +437,7 @@ li + li {
 
 .site-nav [aria-current="page"] {
   font-weight: 600;
+  transform: translateY(1px);
 }
 
 .site-nav a:hover,
